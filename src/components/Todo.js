@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import Modal from './Modal';
+import Backdrop from './Backdrop';
 
 export default function Todo({ text }) {
     const [modalOpen, setModalOpen] = useState(false);
+
     const clickHandler = () => {
-        
+        setModalOpen(true)
     }
 
     return (
@@ -11,7 +14,9 @@ export default function Todo({ text }) {
             <h2>{text}</h2>
         <div className ='actions'>
           <button className='btn'onClick={clickHandler} >Delete</button>
-        </div>
+            </div>
+            {modalOpen && <Modal />}
+            {modalOpen && <Backdrop />}
       </div>
     )
 }
