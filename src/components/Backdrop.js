@@ -1,5 +1,5 @@
-export default function Backdrop() {
+export default function Backdrop({onCancel}) {
     return (
-        <div className='backdrop' />
+        <div className='backdrop' onClick={onCancel}/>
     );
 }
